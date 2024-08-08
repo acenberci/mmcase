@@ -3,11 +3,12 @@ import MenuElement from './menuElement';
 import MenuSeperator from './menuSeperator';
 
 export default function Navbar() {
-    const toggleMenu = () => {
+    const toggleMenu = (a) => {
         const navbarMenu = document.getElementById("navbarMenu")
         const menuIcon = document.getElementById("navbarToggleIcon")
         const content = document.getElementById("mainContent")
-        if(navbarMenu.classList.contains("translate-x-0")){
+        const toggleMenuButton = document.getElementById("navbarToggleButton")
+        if (navbarMenu.classList.contains("translate-x-0")) {
             navbarMenu.classList.remove("translate-x-0")
             navbarMenu.classList.add("-translate-x-full")
             menuIcon.classList.add("rotate-180")
@@ -15,7 +16,9 @@ export default function Navbar() {
             content.classList.remove("ml-[270px]")
             content.classList.remove("w-[calc(100vw-270px)]")
             content.classList.add("w-[100vw]")
-        }else{
+            toggleMenuButton.classList.remove("max-lg:right-0")
+            toggleMenuButton.classList.add("max-lg:right-[-14px]")
+        } else {
             navbarMenu.classList.add("translate-x-0")
             navbarMenu.classList.remove("-translate-x-full")
             menuIcon.classList.remove("rotate-180")
@@ -23,15 +26,17 @@ export default function Navbar() {
             content.classList.add("ml-[270px]")
             content.classList.remove("w-[100vw]")
             content.classList.add("w-[calc(100vw-270px)]")
+            toggleMenuButton.classList.remove("max-lg:right-[-14px]")
+            toggleMenuButton.classList.add("max-lg:right-0")
         }
     };
     return (
-        <div id="navbarMenu" className="min-w-[270px] max-h-[100vh] h-[100vh] flex-col bg-mainBlue ease-in-out transition-transform duration-1000 absolute translate-x-0 ">
+        <div id="navbarMenu" className="min-w-[270px] max-h-[100vh] h-[100vh] flex-col bg-mainBlue ease-in-out transition-transform duration-1000 absolute translate-x-0 max-lg:w-full z-50">
             <div className='py-[12px] px-[10px] relative box-border border-b-[1px] border-solid border-b-transparentBorder'>
                 <a href='#' className='px-[4px] h-[40px] gap-[5px] flex'>
                     <img src="/icons/menu/logo.png" alt="" className='h-full' />
                     <img src="/icons/menu/logoType.png" alt="" className='h-full' />
-                    <button onClick={toggleMenu} className='border-[3px] border-mainBlue bg-white hover:bg-slate-200 rounded-full size-[30px] -translate-y-1/2 absolute top-1/2 right-[-14px] p-[6px] justify-center flex'>
+                    <button id='navbarToggleButton' onClick={(e) => toggleMenu(e)} className='border-[3px] border-mainBlue bg-white hover:bg-slate-200 rounded-full transition-all ease-in-out duration-1000 size-[30px] -translate-y-1/2 absolute top-1/2 lg:right-[-14px] max-lg:right-0 max-lg:border-hoverMainBlue p-[6px] justify-center flex'>
                         <img id='navbarToggleIcon' src="/icons/menu/arrowLeft.png" alt="" className="h-full transition-all ease-in-out duration-1000" />
                     </button>
                 </a>
