@@ -9,7 +9,7 @@ export default function TableElement(props) {
                     <h4 className='font-[500] text-[13px] text-[rgba(41,41,41,0.5)]'>Invoice Date: {props.invoiceDate}</h4>
                 </div>
             </td>
-            <td className="px-[5px] border border-transparent">
+            <td className="px-[5px]">
                 <div className='flex flex-col'>
                     <div className='flex gap-[5px] items-center'>
                         {props.payment == 1 ? <h4 className="font-[500] text-[13px] text-[rgb(45,136,43)] border border-[rgb(45,136,43)] px-[5px] py-[3px] w-fit">Paid</h4>

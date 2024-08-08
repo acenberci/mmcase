@@ -89,9 +89,9 @@ export default function MainContent() {
                   <p className='font-[500] text-[14px]'>Priority</p>
                   <img src="/icons/content/arrowDown.png" alt="" className=' size-[14px]  transition-transform duration-100 ease-in-out group-hover:translate-y-[1px] group-hover:scale-[110%]' />
                 </button>
-                <button className=' px-[14px] border-[1px] py-[3px] rounded-full bg-white flex items-center gap-[6px] h-full hover:bg-[rgb(205,205,205)] hover:shadow-sm group'>
+                <button className=' px-[14px] border py-[3px] rounded-full bg-white flex items-center gap-[6px] h-full hover:bg-[rgb(205,205,205)] hover:shadow-sm group'>
                   <p className='font-[500] text-[14px]'>Date</p>
-                  <img src="/icons/content/arrowDown.png" alt="" className=' size-[14px]  transition-transform duration-100 ease-in-out group-hover:translate-y-[1px] group-hover:scale-[110%]' />
+                  <img src="/icons/content/arrowDown.png" alt="" className=' size-[14px] transition-transform duration-100 ease-in-out group-hover:translate-y-[1px] group-hover:scale-[110%]' />
                 </button>
               </div>
               <button className=' px-[14px] border-[1px] py-[3px] rounded-full bg-white  items-center gap-[6px] h-full hover:bg-[rgb(205,205,205)] hover:shadow-sm group hidden max-sm:flex  max-[500px]:hidden'>
