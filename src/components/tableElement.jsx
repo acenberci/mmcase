@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from "next/image";
 
 export default function TableElement(props) {
     return (
@@ -43,8 +44,8 @@ export default function TableElement(props) {
                 </div>
             </td>
             <td className='text-center'>
-                <button className=' p-[2px] border border-transparent rounded-full'>
-                    <img src="/icons/content/more.png" alt="" className='size-[27px] hover:scale-[110%]' />
+                <button className='p-[2px] border border-transparent rounded-full'>
+                    <Image src="/icons/content/more.png" alt="" width={27} height={27} className='size-[27px] hover:scale-[110%]' />
                 </button>
             </td>
         </tr>

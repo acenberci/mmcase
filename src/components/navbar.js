@@ -1,6 +1,7 @@
 import React from 'react';
 import MenuElement from './menuElement';
 import MenuSeperator from './menuSeperator';
+import Image from "next/image";
 
 export default function Navbar() {
     const toggleMenu = () => {
@@ -29,10 +30,10 @@ export default function Navbar() {
         <div id="navbarMenu" className="min-w-[270px] max-h-[100vh] h-[100vh] flex-col bg-mainBlue ease-in-out transition-transform duration-1000 absolute translate-x-0 ">
             <div className='py-[12px] px-[10px] relative box-border border-b-[1px] border-solid border-b-transparentBorder'>
                 <a href='#' className='px-[4px] h-[40px] gap-[5px] flex'>
-                    <img src="/icons/menu/logo.png" alt="" className='h-full' />
-                    <img src="/icons/menu/logoType.png" alt="" className='h-full' />
+                    <Image src="/icons/menu/logo.png" alt="" height={40} width={40} className='h-full  w-auto'  />
+                    <Image src="/icons/menu/logoType.png" alt="" height={52} width={333} className='h-full w-auto' />
                     <button onClick={toggleMenu} className='border-[3px] border-mainBlue bg-white hover:bg-slate-200 rounded-full size-[30px] -translate-y-1/2 absolute top-1/2 right-[-14px] p-[6px] justify-center flex'>
-                        <img id='navbarToggleIcon' src="/icons/menu/arrowLeft.png" alt="" className="h-full transition-all ease-in-out duration-1000" />
+                        <Image id='navbarToggleIcon' src="/icons/menu/arrowLeft.png" alt="" height={40} width={40}  className="h-full w-auto transition-all ease-in-out duration-1000" />
                     </button>
                 </a>
             </div>
