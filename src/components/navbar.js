@@ -8,11 +8,15 @@ export default function Navbar() {
         const menuIcon = document.getElementById("navbarToggleIcon")
         const content = document.getElementById("mainContent")
         const toggleMenuButton = document.getElementById("navbarToggleButton")
-        if (navbarMenu.classList.contains("translate-x-0")) {
-            navbarMenu.classList.remove("translate-x-0")
+        if ((navbarMenu.classList.contains("max-lg:translate-x-0")&& window.innerWidth<1024)||(navbarMenu.classList.contains("translate-x-0") && window.innerWidth>=1024)) {
+            navbarMenu.classList.add("max-lg:-translate-x-full")
+            navbarMenu.classList.remove("max-lg:translate-x-0")
             navbarMenu.classList.add("-translate-x-full")
+            navbarMenu.classList.remove("translate-x-0")
             menuIcon.classList.add("rotate-180")
+            menuIcon.classList.add("max-lg:rotate-180")
             menuIcon.classList.add("ml-3")
+            menuIcon.classList.add("max-lg:ml-3")
             content.classList.remove("ml-[270px]")
             content.classList.remove("w-[calc(100vw-270px)]")
             content.classList.add("w-[100vw]")
@@ -21,8 +25,12 @@ export default function Navbar() {
         } else {
             navbarMenu.classList.add("translate-x-0")
             navbarMenu.classList.remove("-translate-x-full")
+            navbarMenu.classList.add("max-lg:translate-x-0")
+            navbarMenu.classList.remove("max-lg:-translate-x-full")
             menuIcon.classList.remove("rotate-180")
+            menuIcon.classList.remove("max-lg:rotate-180")
             menuIcon.classList.remove("ml-3")
+            menuIcon.classList.remove("max-lg:ml-3")
             content.classList.add("ml-[270px]")
             content.classList.remove("w-[100vw]")
             content.classList.add("w-[calc(100vw-270px)]")
@@ -31,13 +39,13 @@ export default function Navbar() {
         }
     };
     return (
-        <div id="navbarMenu" className="min-w-[270px] max-h-[100vh] h-[100vh] flex-col bg-mainBlue ease-in-out transition-transform duration-1000 absolute translate-x-0 max-lg:w-full z-50">
+        <div id="navbarMenu" className="min-w-[270px] max-h-[100vh] h-[100vh] flex-col bg-mainBlue ease-in-out transition-transform duration-1000 absolute translate-x-0 max-lg:-translate-x-full max-lg:w-full z-50">
             <div className='py-[12px] px-[10px] relative box-border border-b-[1px] border-solid border-b-transparentBorder'>
                 <a href='#' className='px-[4px] h-[40px] gap-[5px] flex'>
                     <img src="/icons/menu/logo.png" alt="" className='h-full' />
                     <img src="/icons/menu/logoType.png" alt="" className='h-full' />
-                    <button id='navbarToggleButton' onClick={(e) => toggleMenu(e)} className='border-[3px] border-mainBlue bg-white hover:bg-slate-200 rounded-full transition-all ease-in-out duration-1000 size-[30px] -translate-y-1/2 absolute top-1/2 lg:right-[-14px] max-lg:right-0 max-lg:border-hoverMainBlue p-[6px] justify-center flex'>
-                        <img id='navbarToggleIcon' src="/icons/menu/arrowLeft.png" alt="" className="h-full transition-all ease-in-out duration-1000" />
+                    <button id='navbarToggleButton' onClick={(e) => toggleMenu(e)} className='border-[3px] border-mainBlue bg-white hover:bg-slate-200 rounded-full transition-all ease-in-out duration-1000 size-[30px] -translate-y-1/2 absolute top-1/2 lg:right-[-14px] max-lg:right-[-14px] max-lg:border-hoverMainBlue p-[6px] justify-center flex'>
+                        <img id='navbarToggleIcon' src="/icons/menu/arrowLeft.png" alt="" className="h-full transition-all max-lg:rotate-180 max-lg:ml-3 ease-in-out duration-1000" />
                     </button>
                 </a>
             </div>
