@@ -39,7 +39,7 @@ export default function Navbar() {
         }
     };
     return (
-        <div id="navbarMenu" className="min-w-[270px] max-h-[100vh] h-[100vh] flex-col bg-mainBlue ease-in-out transition-transform duration-1000 absolute translate-x-0 max-lg:-translate-x-full max-lg:w-full z-50">
+        <div id="navbarMenu" className="min-w-[270px] max-h-[100lvh] h-[100lvh] flex-col bg-mainBlue ease-in-out transition-transform duration-1000 absolute translate-x-0 max-lg:-translate-x-full max-lg:w-full z-50">
             <div className='py-[12px] px-[10px] relative box-border border-b-[1px] border-solid border-b-transparentBorder'>
                 <a href='#' className='px-[4px] h-[40px] gap-[5px] flex'>
                     <img src="/icons/menu/logo.png" alt="" className='h-full' />
